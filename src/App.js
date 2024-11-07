@@ -6,12 +6,11 @@ import PopularBooks from './components/PopularBooks';
 function App() {
     return (
         <Router>
-            <div className="bg-gray-900 min-h-screen text-gray-200">
+            <div className="font-sans bg-gradient-to-r from-indigo-500 to-purple-500 min-h-screen">
                 <Navbar />
-                <div className="container mx-auto p-6">
+                <div className="container mx-auto p-4 sm:p-6 lg:p-8">
                     <Routes>
                         <Route path="/" element={<PopularBooks />} />
-                        <Route path="/recommend" element={<RecommendBooks />} />
                         <Route path="/contact" element={<Contact />} />
                     </Routes>
                 </div>
@@ -23,9 +22,9 @@ function App() {
 // Placeholder Contact component
 function Contact() {
     return (
-        <div>
-            <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
-            <p className="text-lg">Feel free to contact us at purnanandhkariyavula2004@gmail.com.</p>
+        <div className="text-center mt-10 text-white">
+            <h1 className="text-3xl font-bold">Contact Us</h1>
+            <p className="mt-4">Feel free to contact us at purnanandhkariyavula2004@gmail.com.</p>
         </div>
     );
 }
