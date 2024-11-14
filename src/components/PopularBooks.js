@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function PopularBooks() {
     const [bookNames, setBookNames] = useState([]);
@@ -96,6 +97,12 @@ function PopularBooks() {
                                 <div className="flex justify-between items-center text-gray-700 text-sm">
                                     <p>Votes: <span className="font-medium">{votes[index]}</span></p>
                                     <p>Rating: <span className="font-medium">{ratings[index] ? ratings[index].toFixed(2) : "N/A"}</span></p>
+                                </div>
+                                {/* Comment Section Button */}
+                                <div className='text-center'>
+                                    <Link to={`/comments/${bookNames[index]}`} className="mt-4 inline-block bg-indigo-500 text-white px-4 py-2 rounded-lg text-center transition duration-300 hover:bg-indigo-600">
+                                        View Comments
+                                    </Link>
                                 </div>
                             </div>
                         </div>

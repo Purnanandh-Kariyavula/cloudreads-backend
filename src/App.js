@@ -1,7 +1,9 @@
+// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import PopularBooks from './components/PopularBooks';
+import CommentSection from './components/CommentSection';
 
 function App() {
     return (
@@ -12,6 +14,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<PopularBooks />} />
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/comments/:bookId" element={<CommentSection />} />
                     </Routes>
                 </div>
             </div>
