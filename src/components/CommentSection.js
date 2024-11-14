@@ -26,12 +26,6 @@ function CommentSection() {
             const { comments } = body;
             setUsernames(comments.map((comment) => comment.username));
             setCommentss(comments.map((comment) => comment.comment));
-            // comments.map((comment) => {
-            //     comment.username = setUsernames([...usernames, comment.username]);
-            //     comment.comment = setComments([...commentss, comment.comment]);
-            // })
-            // console.log(commentss);
-            // console.log(usernames);
         })
         .catch((error) => {
             console.error('Failed to fetch comments:', error);
@@ -70,7 +64,7 @@ function CommentSection() {
     const handleAddComment = async () => {
         try {
             await axios.post(`https://cjvajdcsse.execute-api.us-east-1.amazonaws.com/prod/getPopularBooks`, {
-                action: 'addComment',
+                operation: 'addComment',
                 bookId,
                 username,
                 comment
